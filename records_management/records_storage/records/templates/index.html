@@ -1,0 +1,26 @@
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+
+{% block content %}
+
+<div class="container">
+    <nav>
+        <a href="#" id="logo">ROME</a>
+        <ul>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="text">
+            <h1>Simplicity <br> and Efficiency</h1>
+            <p>Streamline your record-keeping with our easy-to-use, efficient, and secure platform.</p>
+        </div>
+        <div class="image">
+            <img src="{% static 'img/logo1.png' %}" alt="record-keeping">
+        </div>
+    </div>
+</div>
+{% endblock %}

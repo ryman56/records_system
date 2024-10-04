@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root{
+    --coffe : #C8835A;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: linear-gradient(to left,#2b1301
+    , #491f04
+    );
+    display: flex;
+    height: 100vh;
+}
+
+body::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--coffe);
+    clip-path: circle(30% at right);
+
+    z-index: -1;
+}
+
+.container{
+    width: 80%;
+    min-height: 80%;
+    margin: auto;
+    padding: 1rem 0;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.046);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, .5);
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+#logo{
+    font-size: 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+
+    letter-spacing: 5px;
+    transition: all .2s ease-in;
+}
+
+#logo:hover{
+    letter-spacing: 12px;
+    color: var(--coffe);
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    flex: 1;
+    gap: 7rem;
+}
+
+nav ul li a{
+    all: unset;
+    font-weight: 200;
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.543);
+    cursor: pointer;
+    
+    transition:  .3s ease-in;
+    position: relative;
+}
+
+nav ul li a:hover{
+    color: var(--coffe);
+}
+
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0%;
+    width: 0%;
+    height: 2px;
+
+    background: var(--coffe);
+    border-radius: 1rem;
+
+    transition: .2s ease-in;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+
+    width: 80%;
+    margin: auto;
+
+    align-items: center;
+    min-height: 60vh;
+}
+
+.content .text{
+    width: 50%;
+}
+
+.content .text h1{
+    font-size: 3vw;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    line-height: 110%;
+    margin-bottom: 1.5rem;
+}
+
+.content .text p{
+    font-weight: 300;
+    font-size: 1vw;
+}
+
+.content img{
+    width: 250px;
+}
+
+
+@media only screen and (max-width: 850px){ 
+    nav, .content, .text{
+        width: 90% !important;
+    }
+    nav #logo{
+        font-size: 23px;
+    }
+    nav ul{
+        gap: 2rem;
+    } 
+    .content{
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .content h1{
+        font-size: 40px !important;
+    }
+    .content p{
+        font-size: 16px !important;
+        text-align: center;
+    }
+
+    .content img{
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 550px){  
+    nav ul{
+        gap: 1.5rem;
+    }
+    nav ul a{
+        font-size: 14px !important;
+    }
+    .content h1{
+        font-size: 30px !important;
+    }
+    .content p{
+        font-size: 14px !important;
+    }
+    .content img{
+        width: 100px;
+    }
+ 
+}
