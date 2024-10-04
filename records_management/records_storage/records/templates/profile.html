@@ -1,0 +1,21 @@
+<!-- profile.html -->
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'dashboard' %}" class="btn btn-dark mb-3">Back</a>
+<h2>Profile</h2>
+
+<h3>Change Password</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ password_form.as_p }}
+    <button type="submit">Change Password</button>
+</form>
+
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

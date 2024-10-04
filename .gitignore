@@ -1,0 +1,10 @@
+# Ignore virtual environments
+records_management/Lib/
+records_management/Scripts/
+*.pyc
+__pycache__/
+*.log
+*.sqlite3
+
+# Ignore the .env file if you're using it for environment variables
+.env
