@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/departments.css' %}">
+{% block content %}
+
+<div class="departments-container">
+    <h2>Departments</h2>
+    <!-- Departments List -->
+    <div class="departments-list">
+        {% if departments %}
+            {% for department in departments %}
+            <div class="department-card">
+                <div class="card h-100 border-dark">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ department.name }}</h5>
+                        <p class="card-text">Click below to view department records.</p>
+                        <a href="{% url 'department_records' department.id %}" class="btn btn-primary">View Records</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No departments found.</p>
+        {% endif %}
+    </div>
+    <button class="btn btn-back"><a href="{% url 'dashboard' %}" class="btn-link">Back</a></button>
+</div>
+
+{% endblock %}
